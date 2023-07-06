@@ -1,0 +1,132 @@
+#VariousRobats {
+    position: relative;
+}
+
+.LoopH :nth-child(2),
+.LoopH :nth-child(3),
+.LoopH :nth-child(4),
+.LoopH :nth-child(5) {
+    opacity: 0;
+}
+
+.LoopL :nth-child(2),
+.LoopL :nth-child(3),
+.LoopL :nth-child(4),
+.LoopL :nth-child(5),
+.LoopL :nth-child(6) {
+    opacity: 0;
+}
+
+.SilverH :nth-child(2),
+.SilverH :nth-child(3),
+.SilverH :nth-child(4) {
+    opacity: 0;
+}
+
+.SilverL :nth-child(2),
+.SilverL :nth-child(3),
+.SilverL :nth-child(4),
+.SilverL :nth-child(6) {
+    opacity: 0;
+}
+
+.RedH :nth-child(2),
+.RedH :nth-child(3),
+.RedH :nth-child(5) {
+    opacity: 0;
+}
+
+.RedL :nth-child(2),
+.RedL :nth-child(3),
+.RedL :nth-child(5),
+.RedL :nth-child(6) {
+    opacity: 0;
+}
+
+.GreenH :nth-child(2),
+.GreenH :nth-child(4),
+.GreenH :nth-child(5) {
+    opacity: 0;
+}
+
+.GreenL :nth-child(2),
+.GreenL :nth-child(4),
+.GreenL :nth-child(5),
+.GreenL :nth-child(6) {
+    opacity: 0;
+}
+
+.BlueH :nth-child(3),
+.BlueH :nth-child(4),
+.BlueH :nth-child(5) {
+    opacity: 0;
+}
+
+.BlueL :nth-child(3),
+.BlueL :nth-child(4),
+.BlueL :nth-child(5),
+.BlueL :nth-child(6) {
+    opacity: 0;
+}
+
+table th {
+    background-color: #954;
+    color: #EEE;
+    width: 24%;
+}
+
+table td {
+    background-color: #AAA;
+    width: 38%;
+}
+
+@media screen and (max-width:959px) {
+    #VariousRobats img {
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        cursor: grab;
+        position: absolute;
+        transition: .25s;
+    }
+
+    table {
+        margin: 45% auto 5%;
+        width: 90%;
+        text-align: center;
+    }
+
+    table th,
+    table td {
+        padding: 5px 0;
+    }
+}
+
+@media screen and (min-width:960px) {
+    #wrap #clickMe {
+        margin-left: 630px;
+    }
+
+    #VariousRobats img {
+        width: 400px;
+        margin-left: 550px;
+        margin-top: 30px;
+        cursor: grab;
+        position: absolute;
+        transition: .25s;
+    }
+
+    table {
+        width: 55%;
+        text-align: center;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+    }
+
+    footer {
+        margin-top: 48px !important;
+    }
+}

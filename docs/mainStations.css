@@ -1,0 +1,349 @@
+#wrap .routeMaps {
+    width: 100%;
+}
+
+#wrap .routeMaps input {
+    /*デフォルトのチェックボックスを非表示*/
+    display: none;
+}
+
+/*↓各路線の押しボタン*/
+#wrap .routeMaps label:nth-of-type(1) {
+    background-color: #15b;
+    color: #eee;
+}
+
+#wrap .routeMaps label:nth-of-type(2) {
+    background-color: #1b5;
+    color: #eee;
+}
+
+#wrap .routeMaps label:nth-of-type(3) {
+    background-color: #b43;
+    color: #eee;
+}
+
+#wrap .routeMaps label:nth-of-type(4) {
+    background-color: #aaa;
+    color: #111;
+}
+
+#wrap .routeMaps label:nth-of-type(5) {
+    background-color: #111;
+    color: #eee;
+}
+
+#wrap .routeMaps label:nth-of-type(6) {
+    box-shadow: 0px 0px 0px 3px #111 inset;
+    color: #111;
+}
+
+/*↑各路線の押しボタン*/
+
+/*路線図・駅名を重ねる*/
+#wrap .routeMaps .images,
+#wrap .routeMaps .names {
+    position: relative;
+}
+
+#wrap .routeMaps .names p {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    transition: 0.15s;
+    transform-origin: 5% 50%;
+    transform: rotate(-45deg);
+}
+
+/*選択された駅名を拡大*/
+#wrap .routeMaps .names p:hover {
+    scale: 1.2;
+}
+
+/*選択された路線・駅名の表示*/
+#blueLine:checked~.images img:nth-child(1),
+#blueLine:checked~.names p:nth-child(1),
+#blueLine:checked~.names p:nth-child(2),
+#blueLine:checked~.names p:nth-child(3),
+#blueLine:checked~.names p:nth-child(4),
+#blueLine:checked~.names p:nth-child(5),
+#greenLine:checked~.images img:nth-child(2),
+#greenLine:checked~.names p:nth-child(2),
+#greenLine:checked~.names p:nth-child(3),
+#greenLine:checked~.names p:nth-child(6),
+#greenLine:checked~.names p:nth-child(7),
+#greenLine:checked~.names p:nth-child(8),
+#greenLine:checked~.names p:nth-child(9),
+#greenLine:checked~.names p:nth-child(10),
+#greenLine:checked~.names p:nth-child(11),
+#redLine:checked~.images img:nth-child(3),
+#redLine:checked~.names p:nth-child(3),
+#redLine:checked~.names p:nth-child(6),
+#redLine:checked~.names p:nth-child(10),
+#redLine:checked~.names p:nth-child(12),
+#redLine:checked~.names p:nth-child(13),
+#silverLine:checked~.images img:nth-child(4),
+#silverLine:checked~.names p:nth-child(6),
+#silverLine:checked~.names p:nth-child(8),
+#silverLine:checked~.names p:nth-child(9),
+#silverLine:checked~.names p:nth-child(12),
+#silverLine:checked~.names p:nth-child(13),
+#loopLine:checked~.images img:nth-child(5),
+#loopLine:checked~.names p:nth-child(13),
+#loopLine:checked~.names p:nth-child(14),
+#loopLine:checked~.names p:nth-child(15),
+#loopLine:checked~.names p:nth-child(16),
+#loopLine:checked~.names p:nth-child(17),
+#allLines:checked~.images img:nth-child(6),
+#allLines:checked~.names p {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width:959px) {
+    #wrap .routeMaps input[type="radio"]:checked+label {
+        scale: 1.1;
+        opacity: 1;
+    }
+
+    #wrap .routeMaps label {
+        cursor: pointer;
+        width: 30%;
+        margin: 1% auto 1% 1.9%; /*6つのボタンを中央に寄せる*/
+        display: inline-block;
+        text-align: center;
+        transition: .15s;
+        opacity: 0.4;
+    }
+
+    #wrap .routeMaps .images,
+    #wrap .routeMaps .names {
+        width: 100%;
+    }
+
+    #wrap .routeMaps .images::before,
+    #wrap .routeMaps .names::before {
+        /*横幅を基準として高さを指定する*/
+        content: "";
+        display: block;
+        padding-top: 80%;
+    }
+
+    #wrap .routeMaps .names::before {
+        /*<div class="images">と重ねる*/
+        margin-top: -80%;
+    }
+
+    #wrap .routeMaps .images img {
+        opacity: 0;
+        position: absolute;
+        width: 70%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-60%, -50%);
+        /*↑駅名を表示する都合上、真ん中ではなく少し左寄りに配置する*/
+        transition: 0.15s;
+    }
+
+    #wrap .routeMaps .names p:nth-child(1) {
+        top: 25%;
+        left: 4%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(2) {
+        top: 25%;
+        left: 30%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(3) {
+        top: 35%;
+        left: 30%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(4) {
+        top: 55%;
+        left: 26%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(5) {
+        top: 67%;
+        left: 26%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(6) {
+        top: 13%;
+        left: 30%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(7) {
+        top: 35%;
+        left: 38%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(8) {
+        top: 35%;
+        left: 47%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(9) {
+        top: 35%;
+        left: 56%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(10) {
+        top: 35%;
+        left: 67%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(11) {
+        top: 35%;
+        left: 77%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(12) {
+        top: 55%;
+        left: 69%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(13) {
+        top: 63%;
+        left: 69%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(14) {
+        top: 65%;
+        left: 46%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(15) {
+        top: 80%;
+        left: 44%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(16) {
+        top: 80%;
+        left: 80%;
+    }
+
+    #wrap .routeMaps .names p:nth-child(17) {
+        top: 65%;
+        left: 80%;
+    }
+}
+
+@media screen and (min-width:960px) {
+    #wrap .routeMaps input[type="radio"]:checked+label {
+        scale: 1.3;
+        opacity: 1;
+    }
+
+    #wrap .routeMaps label {
+        cursor: pointer;
+        width: 130px;
+        margin: 30px auto 30px 50px;
+        display: block;
+        text-align: center;
+        transition: .15s;
+        opacity: 0.4;
+    }
+
+    #wrap .routeMaps .images img {
+        opacity: 0;
+        position: absolute;
+        width: 500px;
+        top: -400px;
+        left: 350px;
+        transition: 0.15s;
+    }
+
+    #wrap .routeMaps .names p:nth-child(1) {
+        top: -340px;
+        left: 320px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(2) {
+        top: -340px;
+        left: 500px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(3) {
+        top: -290px;
+        left: 500px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(4) {
+        top: -160px;
+        left: 470px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(5) {
+        top: -100px;
+        left: 470px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(6) {
+        top: -410px;
+        left: 500px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(7) {
+        top: -290px;
+        left: 570px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(8) {
+        top: -290px;
+        left: 635px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(9) {
+        top: -290px;
+        left: 700px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(10) {
+        top: -290px;
+        left: 780px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(11) {
+        top: -290px;
+        left: 850px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(12) {
+        top: -180px;
+        left: 780px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(13) {
+        top: -120px;
+        left: 780px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(14) {
+        top: -80px;
+        left: 600px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(15) {
+        top: 0px;
+        left: 600px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(16) {
+        top: 0px;
+        left: 850px;
+    }
+
+    #wrap .routeMaps .names p:nth-child(17) {
+        top: -100px;
+        left: 850px;
+    }
+
+    footer {
+        margin-top: 60px !important;
+    }
+}

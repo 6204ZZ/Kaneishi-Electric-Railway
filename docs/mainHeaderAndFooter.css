@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EEE;
+    color: #111;
+    font-size: 18px;
+    line-height: 2;
+    font-family: 'メイリオ', 'ヒラギノ角ゴ Pro W3', 'ＭＳ Ｐゴシック', sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+hr {
+    height: 5px;
+    background-color: #111;
+    border: none;
+}
+
+h1 {
+    font-size: 29px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+header .logo img {
+    width: 250px;
+    margin-top: 20px;
+}
+
+/*チェックボタンを非表示にする*/
+#menuCheckBox {
+    display: none;
+}
+
+footer {
+    background-color: #AAA;
+}
+
+/*現在見ている項目を点灯*/
+.dropmenu li>.here {
+    background-color: #B43;
+    color: #EEE;
+}
+
+@media screen and (max-width:959px) {
+
+    /*ハンバーガーメニュー始まり*/
+    .menuButton {
+        position: fixed;
+        /*画面右上に固定*/
+        top: 10px;
+        /*余白*/
+        right: 10px;
+        /*余白*/
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: #954;
+    }
+
+    /*span要素の前後にspan要素と同じ長方形を作り「三」の形にする*/
+    .menuButton span,
+    .menuButton span:before,
+    .menuButton span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        /*ハンバーガー3本線の太さ*/
+        width: 25px;
+        /*ハンバーガー3本線の長さ*/
+        border-radius: 3px;
+        background-color: #eee;
+        position: absolute;
+        transition: 0.15s;
+    }
+
+    .menuButton span:before {
+        bottom: 8px;
+    }
+
+    .menuButton span:after {
+        top: 8px;
+    }
+
+    /*↓三を×に変形*/
+    #menuCheckBox:checked~.menuButton span {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    #menuCheckBox:checked~.menuButton span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #menuCheckBox:checked~.menuButton span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /*↑三を×に変形*/
+
+    .menuContent {
+        width: 100%;
+        height: 100%;
+        /*画面全体にメニューを展開*/
+        position: fixed;
+        overflow-y: scroll;
+        top: 0;
+        left: 100%;
+        /*leftの値を変更してメニューを画面外へ*/
+        z-index: 80;
+        background-color: #aaa;
+        transition: all 0.15s;
+    }
+
+    .menuContent li {
+        list-style: none;
+    }
+
+    .menuContent .dropmenu {
+        padding: 75px 10px 0;
+    }
+
+    .menuContent .dropmenu>li {
+        border-bottom: solid 1px #111;
+    }
+
+    .menuContent .dropmenu li ul {
+        padding: 5px 0px 0 20px;
+    }
+
+    .menuContent ul li a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        color: #111;
+        text-decoration: none;
+        padding: 3px 10px;
+        position: relative;
+    }
+
+    /*矢印を描く。ただし子を持つ項目と現在見ている項目は除く*/
+    .menuContent ul li a:not(.large):not(.here)::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: solid 2px #111;
+        border-right: solid 2px #111;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+    }
+
+    #menuCheckBox:checked~.menuContent {
+        left: 0;
+        /*メニューを画面内へ*/
+    }
+
+    /*ハンバーガーメニュー終わり*/
+}
+
+@media screen and (min-width:960px) {
+
+    header,
+    #wrap,
+    footer {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    /*ドロップメニュー始まり*/
+    .dropmenu {
+        margin-top: 10px;
+        display: flex;
+        align-content: space-around;
+    }
+
+    .dropmenu li {
+        width: 120px;
+        margin: 5px auto;
+        list-style-type: none;
+        background: #AAA;
+        text-align: center;
+    }
+
+    .dropmenu li a {
+        color: #111;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        display: block;
+        /*aタグをブロック要素にして、親のli要素とサイズを合わせる*/
+        transition: 0.15s;
+    }
+
+    .dropmenu li:hover>a {
+        background-color: #954;
+        color: #EEE;
+        box-shadow: 0px 0px 2px 4px #954;
+    }
+
+    .dropmenu li ul {
+        padding-top: 10px;
+        position: absolute;
+        z-index: 99;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .dropmenu li:hover ul {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dropmenu li ul li:nth-child(2) {
+        transition-delay: .1s;
+    }
+
+    .dropmenu li ul li:nth-child(3) {
+        transition-delay: .2s;
+    }
+
+    .dropmenu li ul li:nth-child(4) {
+        transition-delay: .3s;
+    }
+
+    /*ドロップメニュー終わり*/
+}

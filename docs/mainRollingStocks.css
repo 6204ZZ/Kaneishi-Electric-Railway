@@ -1,0 +1,83 @@
+#wrap img {
+    width: 70%;
+    display: block;
+    margin: 10px auto;
+}
+
+/*↓フレックスコンテナ*/
+.series3000 .otherLights .flex-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.series3000 .otherLights .flex-container .boxItem {
+    width: 30%;
+    height: auto;
+    margin: 10px auto;
+}
+
+.series3000 .otherLights .flex-container .boxItem img {
+    width: 100%;
+}
+
+.series3000 .otherLights .flex-container .boxItem p {
+    text-align: center;
+}
+/* ↑フレックスコンテナ */
+
+.series3000 .specifications {
+    display: block;
+}
+
+.series3000 .specifications .button {
+    border: solid 3px #aaa;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.series3000 .specifications .button:hover {
+    background: #aaa;
+    margin: 0;
+}
+
+.series3000 .specifications .button .detail-show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+}
+
+.detail-hidden {
+    display: block;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+}
+
+table {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+table th,
+table td {
+    padding: 5px 10px;
+}
+
+table th {
+    background-color: #954;
+    color: #EEE;
+    width: 31%;
+}
+
+table td {
+    background-color: #AAA;
+    width: 23%;
+}

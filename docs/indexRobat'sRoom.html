@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initialscale=1.0">
+  <title>テッコウモリの部屋</title>
+  <link rel="stylesheet" href="./mainRobat'sRoom.css">
+  <link rel="stylesheet" href="./mainHeaderAndFooter.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="./pictures/logo.svg" alt="鉄石電気鉄道">
+      </a>
+    </div>
+    <div class="hamburgerMenu">
+      <input type="checkbox" id="menuCheckBox">
+      <label for="menuCheckBox" class="menuButton"><span></span></label>
+      <div class="menuContent">
+        <ul class="dropmenu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="indexStations.html">駅・路線</a></li>
+          <li><a>時刻表</a></li>
+          <li><a>運賃・切符</a></li>
+          <li><a href="indexSites.html">沿線施設</a></li>
+          <li>
+            <a class="large">企業情報</a>
+            <ul>
+              <li><a>会社概要</a></li>
+              <li><a>沿革</a></li>
+              <li><a>採用情報</a></li>
+              <li><a>研究</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="large here">ファン向け</a>
+            <ul>
+              <li><a href="indexRolligStocks.html">車両紹介</a></li>
+              <li><a class="here">キャラクター</a></li>
+              <li><a>グッズ販売</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div id="wrap">
+    <hr>
+    <h1>　テッコウモリの部屋</h1>
+    <hr>
+    <h2>こんにちは！　私は鉄石電気鉄道イメージキャラクターのテッコウモリです！</h2>
+    <p id="clickMe">私をクリックしてみてください。</p>
+
+    <div class="LoopH" id="VariousRobats">
+      <img src="./pictures/Robat'sRoom/6RobatOrigin.svg">
+      <img src="./pictures/Robat'sRoom/5LightsB.svg">
+      <img src="./pictures/Robat'sRoom/4LightsG.svg">
+      <img src="./pictures/Robat'sRoom/3LightsR.svg">
+      <img src="./pictures/Robat'sRoom/2LightsS.svg">
+      <img src="./pictures/Robat'sRoom/1LowerEyes.svg">
+    </div>
+
+    <script>
+      const div_click_item = document.getElementById('VariousRobats');
+      div_click_item.addEventListener('click', function () {
+        if (div_click_item.classList.contains('LoopH')) {
+          div_click_item.classList.remove('LoopH');
+          div_click_item.classList.add('LoopL');
+        }
+        else if (div_click_item.classList.contains('LoopL')) {
+          div_click_item.classList.remove('LoopL');
+          div_click_item.classList.add('SilverH');
+        }
+        else if (div_click_item.classList.contains('SilverH')) {
+          div_click_item.classList.remove('SilverH');
+          div_click_item.classList.add('SilverL');
+        }
+        else if (div_click_item.classList.contains('SilverL')) {
+          div_click_item.classList.remove('SilverL');
+          div_click_item.classList.add('RedH');
+        }
+        else if (div_click_item.classList.contains('RedH')) {
+          div_click_item.classList.remove('RedH');
+          div_click_item.classList.add('RedL');
+        }
+        else if (div_click_item.classList.contains('RedL')) {
+          div_click_item.classList.remove('RedL');
+          div_click_item.classList.add('GreenH');
+        }
+        else if (div_click_item.classList.contains('GreenH')) {
+          div_click_item.classList.remove('GreenH');
+          div_click_item.classList.add('GreenL');
+        }
+        else if (div_click_item.classList.contains('GreenL')) {
+          div_click_item.classList.remove('GreenL');
+          div_click_item.classList.add('BlueH');
+        }
+        else if (div_click_item.classList.contains('BlueH')) {
+          div_click_item.classList.remove('BlueH');
+          div_click_item.classList.add('BlueL');
+        }
+        else if (div_click_item.classList.contains('BlueL')) {
+          div_click_item.classList.remove('BlueL');
+          div_click_item.classList.add('LoopH');
+        }
+      });
+    </script>
+    <table>
+      <tr>
+        <th>
+          名前の由来
+        </th>
+        <td>
+          鉄鋼　鉄工　鉄鉱
+        </td>
+        <td>
+          コウモリ
+        </td>
+      </tr>
+      <tr>
+        <th>
+          大きさ
+        </th>
+        <td colspan="2">
+          手にのるくらい
+        </td>
+      </tr>
+      <tr>
+        <th>
+          性格
+        </th>
+        <td>
+          暗い場所を好む
+        </td>
+        <td>
+          目立ちたがり屋
+        </td>
+      </tr>
+      <tr>
+        <th>
+          特徴
+        </th>
+        <td>
+          色が変わる手
+        </td>
+        <td>
+          光り方が変わる目
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <small>(C)2023 EA.</small>
+  </footer>
+</body>
+
+</html>

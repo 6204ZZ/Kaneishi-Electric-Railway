@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initialscale=1.0">
+  <title>車両紹介</title>
+  <link rel="stylesheet" href="./mainRollingStocks.css">
+  <link rel="stylesheet" href="./mainHeaderAndFooter.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="./pictures/logo.svg" alt="鉄石電気鉄道">
+      </a>
+    </div>
+    <div class="hamburgerMenu">
+      <input type="checkbox" id="menuCheckBox">
+      <label for="menuCheckBox" class="menuButton"><span></span></label>
+      <div class="menuContent">
+        <ul class="dropmenu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="indexStations.html">駅・路線</a></li>
+          <li><a>時刻表</a></li>
+          <li><a>運賃・切符</a></li>
+          <li><a href="indexSites.html">沿線施設</a></li>
+          <li>
+            <a class="large">企業情報</a>
+            <ul>
+              <li><a>会社概要</a></li>
+              <li><a>沿革</a></li>
+              <li><a>採用情報</a></li>
+              <li><a>研究</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="large here">ファン向け</a>
+            <ul>
+              <li><a class="here">車両紹介</a></li>
+              <li><a href="indexRobat'sRoom.html">キャラクター</a></li>
+              <li><a>グッズ販売</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div id="wrap">
+    <hr>
+    <h1>　車両紹介</h1>
+    <hr>
+    <div class="series3000">
+      <h2>3000型</h2>
+      <img id="mypic" src="./pictures/cars/3000L.png">
+      <p>　2015年にはじめて登場した形式で、現在の最新型車両です。</p>
+      <div class="lineLight">
+        <h3>路線識別灯</h3>
+        <p>　本型式最大の特徴は、現在走行している路線によって色が変わる路線識別灯です。</p>
+        <p>　なお、前面と側面に設置された行先表示器による路線案内は継続しますから、色覚にすぐれないお客様も路線を知ることができます。</p>
+      </div>
+      <div class="otherLights">
+        <h3>その他の灯具</h3>
+        <div class="flex-container">
+          <div class="boxItem">
+            <img src="./pictures/cars/highBeam.png">
+            <p>ハイビーム</p>
+          </div>
+          <div class="boxItem">
+            <img src="./pictures/cars/lowBeam.png">
+            <p>ロービーム</p>
+          </div>
+          <div class="boxItem">
+            <img src="./pictures/cars/tailLight.png">
+            <p>テールライト</p>
+          </div>
+        </div>
+        <p>　前面上部に設けられた灯具は、ハイビーム、ロービーム、テールライトと切り替わるたびに異なる表情を見せます。</p>
+      </div>
+      <div class="sideWindow">
+        <h3>側面窓・座席</h3>
+        <img src="./pictures/cars/sideWindow.png">
+        <p>　側面窓は従来型式よりも下方に拡大されているため、窓側のお客様は窓枠をひじ掛けとしてご利用になれます。また、2人がけの座席のシートピッチは1180mm。通路側の乗客が座ったまま、窓側の乗客が移動できます。</p>
+      </div>
+
+      <div class="specifications">
+        <div class="button">主要諸元を開く</div>
+        <div class="detail-hidden">
+          <table>
+            <tr>
+              <th></th>
+              <td>←藤沢・茅ヶ崎</td>
+              <td></td>
+              <td>見上岡・大熊山・鉄石→</td>
+            </tr>
+            <tr>
+              <th>車種記号</th>
+              <td>Tc1</td>
+              <td>M</td>
+              <td>Tc2</td>
+            </tr>
+            <tr>
+              <th>定員</th>
+              <td>115人</td>
+              <td>125人</td>
+              <td>115人</td>
+            </tr>
+            <tr>
+              <th>質量</th>
+              <td>29t</td>
+              <td>33t</td>
+              <td>29t</td>
+            </tr>
+            <tr>
+              <th>設計最高速度</th>
+              <td colspan="3">100km/h</td>
+            </tr>
+            <tr>
+              <th>営業最高速度</th>
+              <td colspan="3">90km/h</td>
+            </tr>
+            <tr>
+              <th>起動加速度</th>
+              <td colspan="3">2.8km/h/s</td>
+            </tr>
+            <tr>
+              <th>減速度(常用最大,非常)</th>
+              <td colspan="3">3.5km/h/s, 4.5km/h/s</td>
+            </tr>
+            <tr>
+              <th>寸法(幅,高さ,長さ)</th>
+              <td colspan="3">2800mm, 4000mm, 18000mm</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <h3><a href="#top">ページ上部へ戻る</a></h3>
+  </div>
+  <script>
+    var pics_src = new Array("./pictures/cars/3000L.png", "./pictures/cars/3000B.png", "./pictures/cars/3000G.png", "./pictures/cars/3000R.png", "./pictures/cars/3000S.png");
+    var num = -1;
+
+    slideshow_timer();
+
+    function slideshow_timer() {
+      if (num == 4) {
+        num = 0;
+      }
+      else {
+        num++;
+      }
+      document.getElementById("mypic").src = pics_src[num];
+      setTimeout("slideshow_timer()", 1000);
+    }
+
+    const buttons = document.getElementsByClassName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        const detail = this.nextElementSibling;
+        if (detail.className == 'detail-hidden') {
+          detail.className = 'detail-show';
+          this.innerHTML = '主要諸元を閉じる';
+        }
+        else {
+          detail.className = 'detail-hidden';
+          this.innerHTML = '主要諸元を開く';
+        }
+      });
+    }
+  </script>
+
+  <footer>
+    <small>(C)2023 EA.</small>
+  </footer>
+</body>
+
+</html>
